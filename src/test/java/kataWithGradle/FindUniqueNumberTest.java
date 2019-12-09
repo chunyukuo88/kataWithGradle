@@ -29,9 +29,9 @@ public class FindUniqueNumberTest {
 	@Test
 	public void canProduceOddOneOutWithDouble() {
 		FindUniqueNumber underTest = new FindUniqueNumber();
-		double[] arr = new double[] {0, 1, 0, 0};
-		double result = 1;
-		double oddOneOut = underTest.findUniq(arr);
+		int[] arr = new int[] {0, 1, 0, 0};
+		int result = 1;
+		int oddOneOut = underTest.findUniq(arr);
 		assertEquals(result, oddOneOut);
 	}
 }

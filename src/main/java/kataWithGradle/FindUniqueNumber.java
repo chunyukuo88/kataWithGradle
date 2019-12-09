@@ -9,10 +9,10 @@ public class FindUniqueNumber {
 		return arr;
 	}
 
-	public double findUniq(double[] arr) {
+	public int findUniq(int[] arr) {
 		Arrays.sort(arr);
-		double first = arr[0];
-		double last = arr[arr.length];
+		int first = arr[0];
+		int last = arr[arr.length];
 		
 		int firstIncrementor = 0;
 		int lastIncrementor = 0;
