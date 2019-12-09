@@ -1,53 +1,20 @@
 package kataWithGradle;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
 public class FindTheStrayNumberTest {
 	
 	@Test
-	public void printArrayZeroIndex() {
-		int[] testNumbers = new int[3];
-		FindTheStrayNumber strayFinder = new FindTheStrayNumber(testNumbers);
-		strayFinder.zeroIndexPrinter();
-		assertEquals(testNumbers[0], 0);
-	}
-	
-	@Test
-	public void sortArray() {
-		int[] testNumbers = new int[] {8, 19, 0};
-		FindTheStrayNumber strayFinder = new FindTheStrayNumber(testNumbers);
-
-		strayFinder.zeroIndexPrinter();
-		assertEquals(testNumbers[0], 0);
-	}
-	
-	@Test
-	public void printFinalIndex() {
-		int[] testNumbers = new int[] {8, 19, 0};
-		FindTheStrayNumber strayFinder = new FindTheStrayNumber(testNumbers);
-		int L = testNumbers.length;
+	public void canProduceStraynumber() {
+		FindTheStrayNumber underTest = new FindTheStrayNumber();
+		int[] input1 = {1, 1, 9};
+		int result1 = underTest.stray(input1);
+		assertEquals(9, result1);
 		
-		strayFinder.finalIndexPrinter();
-		assertEquals(testNumbers[L-1], 19);
-	}
-	
-	@Test
-	public void printOddNumberOut() {
-		int[] testNumbers = new int[] {1, 0, 1, 1, 1, 1, 1, 1};
-		FindTheStrayNumber strayFinder = new FindTheStrayNumber(testNumbers);
-		
-		strayFinder.oddNumberReturner();
-		assertEquals(testNumbers[0], 0);
-	}
-	
-	@Test
-	public void printOddNumberOut2() {
-		int[] testNumbers = new int[] {1, 8, 1, 1, 1, 1, 1};
-		FindTheStrayNumber strayFinder = new FindTheStrayNumber(testNumbers);
-		
-		strayFinder.oddNumberReturner();
-		assertEquals(testNumbers[0], 1);
+		int[] input2 = {0, 0, 9, 0, 0, 0, 0};
+		int result2 = underTest.stray(input2);
+		assertEquals(9, result2);
 	}
 }
