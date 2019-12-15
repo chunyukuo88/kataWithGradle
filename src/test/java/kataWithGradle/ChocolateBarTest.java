@@ -32,4 +32,17 @@ public class ChocolateBarTest {
 		int result3 = underTest.squareNumbers(9, 9);
 		assertEquals(80, result3);		
 	}
+	
+	@Test
+	public void canProduceBreaksForAllDimensions() throws Exception {
+		ChocolateBar underTest = new ChocolateBar();
+		int result1 = underTest.breakChocolate(3, 11);
+		assertEquals(32, result1);
+		
+		int result2 = underTest.breakChocolate(41, 4);
+		assertEquals(163, result2);
+		
+		int result3 = underTest.breakChocolate(1, 1);
+		assertEquals(0, result3);		
+	}
 }

@@ -21,5 +21,15 @@ public class ChocolateBar {
 		return (i*j)-1;
 	}
 
+	public int breakChocolate(int n, int m) {
+		if (n*m == 0) {
+			return 0;
+		} else if (n*m ==1) {
+			return 0;
+		} else {
+			return (n*m)-1;
+		}
+	}
+
 	
 }
