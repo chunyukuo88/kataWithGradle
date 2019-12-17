@@ -31,5 +31,15 @@ public class ChocolateBar {
 		}
 	}
 
+	public int[] produceDoubledInts(int[] input) {
+		int L = input.length;
+		int[] result = new int[L];
+		for (int i = 0; i < L; i++) {
+			result[i] = (input[i]*2);
+			System.out.print(result[i]);
+		}
+		return result;
+	}
+
 	
 }

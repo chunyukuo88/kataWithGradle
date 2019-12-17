@@ -45,4 +45,13 @@ public class ChocolateBarTest {
 		int result3 = underTest.breakChocolate(1, 1);
 		assertEquals(0, result3);		
 	}
+	
+	@Test
+	public void returnDoubleArray() throws Exception {
+		ChocolateBar underTest = new ChocolateBar();
+		int[] input = new int[] {1, 2, 3};
+		int[] result = new int[] {2, 4, 6};
+		int[] output = underTest.produceDoubledInts(input);
+		assertEquals(result, output);
+	}
 }
