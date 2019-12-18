@@ -24,12 +24,21 @@ public class TrailingZeroes {
 			return false;
 		}
 		
-//		int trailingZeroes = 0;
-//		for (int j = factorialAsArray.length; j > 0; j--) {
-//			while (factorialAsArray[j].equals("0")) {
-//				trailingZeroes++;
-//			}
-//		}
+
+	}
+
+	public int countZeroes(int i) {
+		int factorial = produceFactorial(i);
+		String factorialAsString = Integer.toString(factorial);
+		String[] factorialAsArray = factorialAsString.split("");
+		int allZeroes = 0;
+		for (int j = factorialAsArray.length - 1; j > 0; j--) {
+			if (factorialAsArray[j].equals("0")) {
+				allZeroes++;
+			}
+		}
+		System.out.println(allZeroes);
+		return allZeroes;
 	}
 
 }
