@@ -32,13 +32,10 @@ public class TrailingZeroes {
 	}
 
 	public int produceFactorial(int i) {
-		int j = i;
-		int factorial = 1;
-		while (j > 0) {
-			factorial *= j;
-			j--;
-		}
-		return factorial;
+	    if (i == 1)
+	        return 1;
+	    else
+	        return i*produceFactorial(i-1);   
 	}
 
 
@@ -60,6 +57,7 @@ public class TrailingZeroes {
 					}
 				}
 			}
+			System.out.println(factorial);
 			return trailingZeroes;
 		}
 	}
