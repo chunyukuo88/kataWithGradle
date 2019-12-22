@@ -139,4 +139,5 @@ public class RomanNumeralator {
 					onesDigit(intArray[3]);
 	return "Error";
 	}
+
 }
