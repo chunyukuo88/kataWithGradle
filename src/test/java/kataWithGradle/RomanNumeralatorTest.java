@@ -8,24 +8,24 @@ import org.junit.Test;
 
 public class RomanNumeralatorTest {
 
-//	@Test
-//	public void canConvertSingleDigitNumbers() {
-//		RomanNumeralator underTest = new RomanNumeralator();
-//		String result1 = underTest.convertOnesDigit(3);
-//		assertEquals(result1, "III");
-//		
-//		String result2 = underTest.convertOnesDigit(4);
-//		assertEquals(result2, "IV");
-//		
-//		String result3 = underTest.convertOnesDigit(5);
-//		assertEquals(result3, "V");
-//		
-//		String result4 = underTest.convertOnesDigit(8);
-//		assertEquals(result4, "VIII");
-//		
-//		String result5 = underTest.convertOnesDigit(10);
-//		assertEquals(result5, "X");
-//	}
+	@Test
+	public void canConvertSingleDigitNumbers() {
+		RomanNumeralator underTest = new RomanNumeralator();
+		String result1 = underTest.onesDigit(3);
+		assertEquals(result1, "III");
+		
+		String result2 = underTest.onesDigit(4);
+		assertEquals(result2, "IV");
+		
+		String result3 = underTest.onesDigit(5);
+		assertEquals(result3, "V");
+		
+		String result4 = underTest.onesDigit(8);
+		assertEquals(result4, "VIII");
+		
+		String result5 = underTest.onesDigit(10);
+		assertEquals(result5, "X");
+	}
 	
 	@Test
 	public void canConvertTwoDigitNumbers() {
@@ -64,5 +64,16 @@ public class RomanNumeralatorTest {
 		
 		String result5 = underTest.solution(999);
 		assertEquals(result5, "CMXCIX");
+	}
+	
+	@Test
+	public void canConvertFourDigitNumbers() {
+		RomanNumeralator underTest = new RomanNumeralator();
+		
+		String result1 = underTest.solution(1914);
+		assertEquals(result1, "MCMXIV");
+		
+		String result2 = underTest.solution(1632);
+		assertEquals(result2, "MDCXXXII");
 	}
 }

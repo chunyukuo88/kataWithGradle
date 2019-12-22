@@ -2,7 +2,7 @@ package kataWithGradle;
 
 public class RomanNumeralator {
 
-	public String convertOnesDigit(int n) {
+	public String onesDigit(int n) {
 		
 		String result = "";
 		
@@ -27,7 +27,7 @@ public class RomanNumeralator {
 		return "Error";
 	}
 
-	public String convertTensDigit(int n) {
+	public String tensDigit(int n) {
 		
 		String inputAsString = Integer.toString(n);
 		String[] stringArray = inputAsString.split("");
@@ -61,7 +61,7 @@ public class RomanNumeralator {
 		return "C";
 	}
 
-	public String convertHundredsDigit(int n) {
+	public String hundredsDigit(int n) {
 		
 		String inputAsString = Integer.toString(n);
 		String[] stringArray = inputAsString.split("");
@@ -88,12 +88,32 @@ public class RomanNumeralator {
 			for (int i = 5; i < hundredsDigit; i++) {
 				result += "C";
 			}
-			return result + "CD";
+			return result;
 		} else if (hundredsDigit == 9) {
 			return result + "CM";
 		} else
 			return "Error";
-	}		
+	}	
+	
+	public String thousandsDigit(int n) {
+		String inputAsString = Integer.toString(n);
+		String[] stringArray = inputAsString.split("");
+		int[] intArray = new int[stringArray.length];
+		
+		for (int i = 0; i < stringArray.length; i++) {
+			intArray[i] = Integer.parseInt(stringArray[i]);
+		}
+		
+		int thousands = intArray[0]; 
+		
+		String result = "";
+		
+		for (int i = 0; i < thousands; i++) {
+			result += "M";
+			}
+		
+		return result;
+	}
 	
 	public String solution(int n) {
 		String inputAsString = Integer.toString(n);
@@ -105,13 +125,18 @@ public class RomanNumeralator {
 		}
 		
 		if (n < 11)
-			return convertOnesDigit(n);
+			return onesDigit(n);
 		else if (n == 99)
 			return "XCIX";
 		else if (n >= 11 && n < 100)
-			return convertTensDigit(intArray[0]) + convertOnesDigit(intArray[1]);
+			return tensDigit(intArray[0]) + onesDigit(intArray[1]);
 		else if (n >= 101 && n < 1000)
-			return convertHundredsDigit(intArray[0]) + convertTensDigit(intArray[1]) + convertOnesDigit(intArray[2]);
+			return hundredsDigit(intArray[0]) + tensDigit(intArray[1]) + onesDigit(intArray[2]);
+		else if (n >= 1000)
+			return thousandsDigit(intArray[0]) + 
+					hundredsDigit(intArray[1]) +
+					tensDigit(intArray[2]) +
+					onesDigit(intArray[3]);
 	return "Error";
 	}
 }
