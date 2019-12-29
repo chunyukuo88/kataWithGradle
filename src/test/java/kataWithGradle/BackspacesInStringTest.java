@@ -24,7 +24,7 @@ public class BackspacesInStringTest {
 	}
 	
 	@Test
-	public void testName() throws Exception {
+	public void canHandleAnyString() throws Exception {
 		BackspacesInString underTest = new BackspacesInString();
 		assertEquals(underTest.cleanString("abc#d##c"), "ac");
 	}
