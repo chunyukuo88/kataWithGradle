@@ -1,8 +1,6 @@
 package kataWithGradle;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,6 +28,7 @@ public class TopWordsTest {
 	@Test
 	public void canProduceTheTop3MostCommon() throws Exception {
 		TopWords underTest = new TopWords();
+		
 		String input = "The the the the and and and house house to of";
 		String[] inputArray = input.split(" ");
 		ArrayList<String> result = underTest.top3(input);
@@ -37,6 +36,33 @@ public class TopWordsTest {
 			expectedOutput.add("the");
 			expectedOutput.add("and");
 			expectedOutput.add("house");
-		assertEquals(result, expectedOutput); 
+		assertEquals(result, expectedOutput);
+		
+		
+		String input2 = "The and and";
+		String[] inputArray2 = input2.split(" ");
+		ArrayList<String> result2 = underTest.top3(input2);
+		ArrayList<String> expectedOutput2 = new ArrayList<>();
+			expectedOutput2.add("and");
+			expectedOutput2.add("the");
+		assertEquals(result2, expectedOutput2);
+		
+		
+		String input3 = "and and";
+		String[] inputArray3 = input3.split(" ");
+		ArrayList<String> result3 = underTest.top3(input3);
+		ArrayList<String> expectedOutput3 = new ArrayList<>();
+			expectedOutput3.add("and");
+		assertEquals(result3, expectedOutput3);
+		
+		
+		String input4 = "";
+		String[] inputArray4 = input4.split(" ");
+		ArrayList<String> result4 = underTest.top3(input4);
+		ArrayList<String> expectedOutput4 = new ArrayList<>();
+		//Don't add anything
+		assertEquals(result4, expectedOutput4);
 	}
+	
+
 }
