@@ -17,6 +17,14 @@ public class Streams{
 		}
 		
 		return evenNumbers;
+	}
+
+	public List<String> capitalizer(List<String> inputList) {
+		List<String> output = inputList.stream()
+									   .map(word->word.toUpperCase())
+//									   .map(String::toUpperCase()) //-----This worked in https://technologyconversations.com/2014/11/04/java-8-streams-micro-katas/
+									   .collect(toList());
+		return output;
 	}	
 
 }
