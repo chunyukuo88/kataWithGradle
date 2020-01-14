@@ -4,10 +4,11 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import org.junit.Test;
 
-import junit.framework.Assert;
+//Source:
+//https://www.codewars.com/kata/51e056fe544cf36c410000fb/train/java
+
 
 public class TopWordsTest {
 
@@ -29,17 +30,17 @@ public class TopWordsTest {
 	public void canProduceTheTop3MostCommon() throws Exception {
 		TopWords underTest = new TopWords();
 		
-		String input = "The the the the and and and house house to of";
-		String[] inputArray = input.split(" ");
-		ArrayList<String> result = underTest.top3(input);
-		ArrayList<String> expectedOutput = new ArrayList<>();
-			expectedOutput.add("the");
-			expectedOutput.add("and");
-			expectedOutput.add("house");
-		assertEquals(result, expectedOutput);
+//		String input = "The the the the and and and house house to of";
+//		String[] inputArray = input.split(" ");
+//		ArrayList<String> result = underTest.top3(input);
+//		ArrayList<String> expectedOutput = new ArrayList<>();
+//			expectedOutput.add("the");
+//			expectedOutput.add("and");
+//			expectedOutput.add("house");
+//		assertEquals(result, expectedOutput);
+//		
 		
-		
-		String input2 = "The and and";
+		String input2 = "The and, and";
 		String[] inputArray2 = input2.split(" ");
 		ArrayList<String> result2 = underTest.top3(input2);
 		ArrayList<String> expectedOutput2 = new ArrayList<>();
@@ -48,20 +49,20 @@ public class TopWordsTest {
 		assertEquals(result2, expectedOutput2);
 		
 		
-		String input3 = "and and";
-		String[] inputArray3 = input3.split(" ");
-		ArrayList<String> result3 = underTest.top3(input3);
-		ArrayList<String> expectedOutput3 = new ArrayList<>();
-			expectedOutput3.add("and");
-		assertEquals(result3, expectedOutput3);
-		
-		
-		String input4 = "";
-		String[] inputArray4 = input4.split(" ");
-		ArrayList<String> result4 = underTest.top3(input4);
-		ArrayList<String> expectedOutput4 = new ArrayList<>();
-		//Don't add anything
-		assertEquals(result4, expectedOutput4);
+//		String input3 = "and and";
+//		String[] inputArray3 = input3.split(" ");
+//		ArrayList<String> result3 = underTest.top3(input3);
+//		ArrayList<String> expectedOutput3 = new ArrayList<>();
+//			expectedOutput3.add("and");
+//		assertEquals(result3, expectedOutput3);
+//		
+//		
+//		String input4 = "";
+//		String[] inputArray4 = input4.split(" ");
+//		ArrayList<String> result4 = underTest.top3(input4);
+//		ArrayList<String> expectedOutput4 = new ArrayList<>();
+//		//Don't add anything
+//		assertEquals(result4, expectedOutput4);
 	}
 	
 

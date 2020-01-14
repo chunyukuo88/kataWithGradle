@@ -27,8 +27,20 @@ public class TopWords {
 			return result;
 		} else {
 			
-			//Now I have a map of individual words and their tallies
-			HashMap<String, Integer> tallies = produceTallies(input);
+			HashMap<String, Integer> tallies = new HashMap<String, Integer>();
+			String[] inputAsArray = input.toLowerCase().split(" ");
+			for (int i = 0; i < inputAsArray.length; i++) {
+				inputAsArray[i] = inputAsArray[i].replace(",", "");
+				inputAsArray[i] = inputAsArray[i].replace(".", "");
+			}
+			
+			for (int i = 0; i < inputAsArray.length; i++) {
+				if (tallies.containsKey(inputAsArray[i]) == true) {
+					int updatedValue = tallies.get(inputAsArray[i]);
+					tallies.put(inputAsArray[i], (updatedValue + 1));
+				} else
+					tallies.put(inputAsArray[i], 1);
+			}
 			
 			//An empty list
 			ArrayList<Integer> top3tallies = new ArrayList<>();
@@ -62,12 +74,14 @@ public class TopWords {
 			
 			for (int i = 0; i < index; i++) {
 				for (String key : tallies.keySet()) {
-					if (tallies.get(key) == top3tallies.get(i)) {
+					if (tallies.get(key) == top3tallies.get(i) && result.contains(key) == false) {
 						result.add(key);
 						System.out.println(key);
 					}
 				}		
 			}
+			
+			
 			return result;
 			
 		}
