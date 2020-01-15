@@ -13,8 +13,10 @@ public class Isograms {
 	public boolean isIsogram(String str) {
 		String[] sortedInput = produceSortedArray(str);
 
+		
+		
 		int result = 0;
-		for (int i = 0; i < sortedInput.length -1; i++) {
+		for (int i = 0; i < sortedInput.length-1; i++) {
 			if (sortedInput[i].equals(sortedInput[i+1]))
 				result += 1;
 		}

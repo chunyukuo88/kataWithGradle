@@ -12,7 +12,7 @@ import org.junit.Test;
 
 public class StreamsTest {
 
-	@Test
+//	@Test
 	public void canProduceEvenNumbers() throws Exception {
 		Streams underTest = new Streams();
 		ArrayList<Integer> list = new ArrayList<>();
@@ -32,7 +32,7 @@ public class StreamsTest {
 	//Source for the next few micro kata:
 	//https://technologyconversations.com/2014/11/04/java-8-streams-micro-katas/
 	
-	@Test
+//	@Test
     public void transformShouldConvertCollectionElementsToUpperCase() {
 		Streams underTest = new Streams();
 		String[] input = new String[] {"My", "name", "is", "John", "Doe"};
@@ -42,11 +42,28 @@ public class StreamsTest {
 		//Gratuitous use of the method reference operator (`::`) for demonstration purposes
 		Stream<String> stream = Stream.of("Howzit", "howzit");
 		stream.forEach(System.out::println);
+					 //class     ::function 
 		
 		String[] expected = new String[] {"MY", "NAME", "IS", "JOHN", "DOE"};
         List<String> expectedList = Arrays.asList(expected);
         assertEquals(result, expectedList);
     }
 	
-	
+    @Test
+//  Filter collection so that only elements with less then 4 characters are returned.
+    public void transformShouldFilterCollection() {
+        Streams underTest = new Streams();
+    	
+    	String[] input = new String[] {"My", "name", "is", "Chuck", "Norris"};
+    	List<String> inputList = Arrays.asList(input);
+    	
+    	String[] expectedStrings = new String[] {"My", "is"}; 
+        List<String> expected = Arrays.asList(expectedStrings);
+        
+        List<String> result = underTest.fourCharsAndUnder(inputList);
+        
+        assertEquals(result, expected);
+    }
+    
+    
 }
