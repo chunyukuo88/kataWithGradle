@@ -119,7 +119,18 @@ public class Whiteboarding {
 		return result;
 		
 	}
-	
-	
+
+//	"ss" 				= 2
+//	"Assist Cabass"		= 13
+	int countSubstrings(String s, String b) {
+		int count = 0;
+		for (int i = 0; i < b.length() - s.length() + 1; i++) {
+			String bSubstring = b.substring(i, i + s.length());
+			if (bSubstring.equals(s)) {
+				count++;
+			}
+		}
+		return count;
+	}
 	
 }

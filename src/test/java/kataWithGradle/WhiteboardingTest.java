@@ -116,4 +116,26 @@ public class WhiteboardingTest {
 		assertArrayEquals(resultArray, leftShifted);
 	}
 	
+//  Problem #8:
+//	Return the number of places where a substring appears in a string.
+	@Test
+	public void countNumberOfSubstrings() throws Exception {
+		Whiteboarding underTest = new Whiteboarding();
+		String s = "__"; 			// s.length() = 2;
+		String b = "__        __";  // b.length() = 13;
+		int result = underTest.countSubstrings(s, b);
+		int expectedOutput = 2;
+		assertEquals(result, expectedOutput);
+	}
+	
+	@Test
+	public void countSubstringsWhenBothAreTheSame() throws Exception {
+		Whiteboarding underTest = new Whiteboarding();
+		String s = "123";
+		String b = "123";
+		int result = underTest.countSubstrings(s, b);
+		int expectedOutput = 1;
+		assertEquals(result, expectedOutput);
+	}
+	
 }
