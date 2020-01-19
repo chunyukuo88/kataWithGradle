@@ -138,4 +138,25 @@ public class WhiteboardingTest {
 		assertEquals(result, expectedOutput);
 	}
 	
+//	Problem #9: Check if a number is a prime number.
+	
+	@Test
+	public void determineIfPrime() throws Exception {
+		Whiteboarding underTest = new Whiteboarding();
+		int input1 = 6;
+		boolean result1 = underTest.determineIfPrime(input1);
+		boolean expectedOutput1 = true;
+		assertEquals(result1, expectedOutput1);
+		
+		int input2 = 13;
+		boolean result2 = underTest.determineIfPrime(input2);
+		boolean expectedOutput2 = true;
+		assertEquals(result2, expectedOutput2);
+		
+		int input3 = 1;
+		boolean result3 = underTest.determineIfPrime(input3);
+		boolean expectedOutput3 = true;
+		assertEquals(result3, expectedOutput3);
+	}
+	
 }

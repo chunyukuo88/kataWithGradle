@@ -132,5 +132,21 @@ public class Whiteboarding {
 		}
 		return count;
 	}
+
+	public boolean determineIfPrime(int input) {
+		boolean result = true;
+		
+		if (input == 1)
+			return result;
+		else {
+			for (int i = input-1; i > 1; i--) {
+				if (input % i == 0)
+					result = false;
+					break;
+			}
+			return result;
+		}
+		
+	}
 	
 }
