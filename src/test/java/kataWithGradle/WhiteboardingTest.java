@@ -159,4 +159,23 @@ public class WhiteboardingTest {
 		assertEquals(result3, expectedOutput3);
 	}
 	
+//	Problem #10: Check if Armstrong number.
+//	A number is called an Armstrong number 
+//	if it is equal to the cube of its every digit.
+	
+	@Test
+	public void canProduceSumOfCubesOfEachDigit() throws Exception {
+		Whiteboarding underTest = new Whiteboarding();
+		int number = 123; // 1 + 8 + 27 = 36
+		int result = underTest.sumOfDigitCubes(number);
+		assertEquals(result, 36);
+	}
+	
+	@Test
+	public void canDetermineIfTheInputIsAnArmstrongNumber() throws Exception {
+		Whiteboarding underTest = new Whiteboarding();
+		int number = 123; // 1 + 8 + 27 = 36
+		int result = underTest.armstrong(number);
+		assertEquals(result, 36);
+	}
 }

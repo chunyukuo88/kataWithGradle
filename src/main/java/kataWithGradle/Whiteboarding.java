@@ -2,6 +2,8 @@
 
 package kataWithGradle;
 
+import java.util.Arrays;
+
 public class Whiteboarding {
 
 //	Problem #1: 
@@ -113,9 +115,6 @@ public class Whiteboarding {
 		}
 		result[finalElementIndex] = testArray[0];
 		
-		for (int i : result) {
-			System.out.print(i);
-		}
 		return result;
 		
 	}
@@ -147,6 +146,25 @@ public class Whiteboarding {
 			return result;
 		}
 		
+	}
+
+	public int sumOfDigitCubes(int number) {
+		String[] stringArray = Integer.toString(number)
+									  .split("");
+		int result = 0;
+		for (int i = 0; i < stringArray.length; i++) {
+			int cube = (Integer.parseInt(stringArray[i])) * 
+					   (Integer.parseInt(stringArray[i])) * 
+					   (Integer.parseInt(stringArray[i]));
+			result += cube;
+		}
+		System.out.println(result);
+		return result;
+	}
+
+	public int armstrong(int number) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }
